@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FF Battle Arena Admin</title>
+<style>
+body {
+  background:#101522;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding:20px;
+}
+.card {
+  background:#202c40;
+  padding:20px;
+  margin:20px auto;
+  border-radius:12px;
+  max-width:450px;
+}
+input,select {
+  padding:12px;
+  margin:8px;
+  width:85%;
+  border-radius:6px;
+}
+button {
+  padding:12px 20px;
+  background:#ff922e;
+  border:0;
+  border-radius:6px;
+  font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<h1>⚔ FF BATTLE ARENA</h1>
+<h2>Admin Dashboard</h2>
+
+<div class="card">
+  <h3>Create Tournament</h3>
+
+  <input id="name" placeholder="Tournament Name">
+
+  <select id="format">
+    <option value="solo">Solo</option>
+    <option value="duo">Duo</option>
+    <option value="squad">Squad</option>
+  </select>
+
+  <p>Proposed Entry Fee: ₹50</p>
+  <p>Payment: Disabled</p>
+
+  <button onclick="alert('Demo only. Secure admin connection pending.')">
+    Create Tournament
+  </button>
+</div>
+
+</body>
+</html>
