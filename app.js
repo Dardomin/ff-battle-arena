@@ -2,7 +2,7 @@
 import { createClient } from
 "https://esm.sh/@supabase/supabase-js@2";
 
-const SUPABASE_URL = "sb_publishable_NaBONcDRH4_KogvDeE0b7Q_qmvDEYP5";
+const SUPABASE_URL = "https://mplvpzhmyjqoxkddgwhw.supabase.co";
 const SUPABASE_KEY = "sb_publishable_NaBONcDRH4_KogvDeE0b7Q_qmvDEYP5";
 
 const db = createClient(
@@ -11,16 +11,20 @@ const db = createClient(
 );
 
 async function testConnection() {
-  const { data, error } = await db
+  const connection = document.getElementById("connection");
+
+  if (!connection) return;
+
+  connection.textContent = "Connecting...";
+
+  const { error } = await db
     .from("tournaments")
     .select("id")
     .limit(1);
 
-  const message = error
+  connection.textContent = error
     ? "Database Error: " + error.message
     : "🔥 FF Battle Arena Database Connected!";
-
-  document.getElementById("connection").textContent = message;
 }
 
 testConnection();
